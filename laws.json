@@ -1,0 +1,82 @@
+{
+  "T1": {
+    "name": {"en": "Assibilation", "de": "Assibilierung", "ru": "Ассибиляция", "fr": "Assibilation", "fa": "سایشی‌شدگی"},
+    "text": {
+      "en": "t becomes s before a front vowel or y.",
+      "de": "t wird zu s vor vorderem Vokal oder y.",
+      "ru": "t переходит в s перед гласной переднего ряда или y.",
+      "fr": "t devient s devant une voyelle antérieure ou y.",
+      "fa": "t پیش از واکهٔ پیشین یا y به s بدل می‌شود."
+    }
+  },
+  "T2": {
+    "name": {"en": "The syllabic resonants", "de": "Die silbischen Resonanten", "ru": "Слоговые сонанты", "fr": "Les résonantes syllabiques", "fa": "رسانه‌های هجاساز"},
+    "text": {
+      "en": "ṛ ḷ ṃ ṇ become ar al am an; before a vowel they are consonants.",
+      "de": "ṛ ḷ ṃ ṇ werden zu ar al am an; vor einem Vokal sind sie Konsonanten.",
+      "ru": "ṛ ḷ ṃ ṇ становятся ar al am an; перед гласной они согласные.",
+      "fr": "ṛ ḷ ṃ ṇ deviennent ar al am an ; devant une voyelle ce sont des consonnes.",
+      "fa": "ṛ ḷ ṃ ṇ به ar al am an بدل می‌شوند؛ پیش از واکه همخوان‌اند."
+    }
+  },
+  "T3": {
+    "name": {"en": "The great shift", "de": "Die große Lautverschiebung", "ru": "Великий сдвиг", "fr": "Le grand glissement", "fa": "دگرگونی بزرگ"},
+    "text": {
+      "en": "bʰ dʰ gʰ ǵʰ gʷʰ > b d g ǵ gʷ;  b d g ǵ gʷ > p t k ć kʷ;  p t k ḱ kʷ > f θ x ś xʷ, except after a consonant, where ḱ is ć.",
+      "de": "bʰ dʰ gʰ ǵʰ gʷʰ > b d g ǵ gʷ;  b d g ǵ gʷ > p t k ć kʷ;  p t k ḱ kʷ > f θ x ś xʷ, außer nach einem Konsonanten, wo ḱ zu ć wird.",
+      "ru": "bʰ dʰ gʰ ǵʰ gʷʰ > b d g ǵ gʷ;  b d g ǵ gʷ > p t k ć kʷ;  p t k ḱ kʷ > f θ x ś xʷ, кроме позиции после согласной, где ḱ даёт ć.",
+      "fr": "bʰ dʰ gʰ ǵʰ gʷʰ > b d g ǵ gʷ ;  b d g ǵ gʷ > p t k ć kʷ ;  p t k ḱ kʷ > f θ x ś xʷ, sauf après une consonne, où ḱ devient ć.",
+      "fa": "bʰ dʰ gʰ ǵʰ gʷʰ > b d g ǵ gʷ؛  b d g ǵ gʷ > p t k ć kʷ؛  p t k ḱ kʷ > f θ x ś xʷ، جز پس از همخوان، که ḱ به ć بدل می‌شود."
+    }
+  },
+  "T4": {
+    "name": {"en": "Loss of the laryngeals", "de": "Schwund der Laryngale", "ru": "Утрата ларингалов", "fr": "Chute des laryngales", "fa": "افتادن حنجره‌ای‌ها"},
+    "text": {
+      "en": "ḥ and ʔ are lost; a voiced stop before ḥ is first made voiceless.",
+      "de": "ḥ und ʔ gehen verloren; ein stimmhafter Verschlusslaut vor ḥ wird zuvor stimmlos.",
+      "ru": "ḥ и ʔ утрачиваются; звонкий смычный перед ḥ предварительно оглушается.",
+      "fr": "ḥ et ʔ tombent ; une occlusive sonore devant ḥ s'assourdit d'abord.",
+      "fa": "ḥ و ʔ از میان می‌روند؛ انسدادیِ واکدار پیش از ḥ نخست بی‌واک می‌شود."
+    }
+  },
+  "T7": {
+    "name": {"en": "The labiovelars resolve", "de": "Auflösung der Labiovelare", "ru": "Распад лабиовелярных", "fr": "Résolution des labiovélaires", "fa": "گسست لب‌کامی‌ها"},
+    "text": {
+      "en": "Before a vowel kʷ gʷ hʷ become kw gw hw; elsewhere they lose their rounding.",
+      "de": "Vor Vokal werden kʷ gʷ hʷ zu kw gw hw; sonst verlieren sie ihre Rundung.",
+      "ru": "Перед гласной kʷ gʷ hʷ дают kw gw hw; в остальных случаях теряют огубленность.",
+      "fr": "Devant une voyelle kʷ gʷ hʷ deviennent kw gw hw ; ailleurs elles perdent leur arrondissement.",
+      "fa": "پیش از واکه kʷ gʷ hʷ به kw gw hw بدل می‌شوند؛ در جاهای دیگر گردی خود را از دست می‌دهند."
+    }
+  },
+  "R2": {
+    "name": {"en": "The a-merger", "de": "Zusammenfall zu a", "ru": "Слияние в a", "fr": "La fusion en a", "fa": "درآمیختن در a"},
+    "text": {
+      "en": "Short e and o fall together as a; long ē ō stand.",
+      "de": "Kurzes e und o fallen als a zusammen; langes ē ō bleiben.",
+      "ru": "Краткие e и o совпадают в a; долгие ē ō сохраняются.",
+      "fr": "e et o brefs se confondent en a ; ē ō longs demeurent.",
+      "fa": "e و o کوتاه در a یکی می‌شوند؛ ē و ō بلند می‌مانند."
+    }
+  },
+  "R8": {
+    "name": {"en": "w becomes v", "de": "w wird zu v", "ru": "w переходит в v", "fr": "w devient v", "fa": "w به v بدل می‌شود"},
+    "text": {
+      "en": "w > v before a vowel or y, after any consonant too; lost before u.",
+      "de": "w > v vor Vokal oder y, auch nach jedem Konsonanten; vor u schwindet es.",
+      "ru": "w > v перед гласной или y, в том числе после любого согласного; перед u утрачивается.",
+      "fr": "w > v devant une voyelle ou y, après n'importe quelle consonne aussi ; tombe devant u.",
+      "fa": "w > v پیش از واکه یا y، پس از هر همخوانی نیز؛ پیش از u می‌افتد."
+    }
+  },
+  "R9": {
+    "name": {"en": "Final n", "de": "Schwund des auslautenden n", "ru": "Утрата конечного n", "fr": "n final", "fa": "n پایانی"},
+    "text": {
+      "en": "A word-final n is lost.",
+      "de": "Ein wortauslautendes n geht verloren.",
+      "ru": "Конечное n слова утрачивается.",
+      "fr": "Un n final de mot tombe.",
+      "fa": "n پایانِ واژه می‌افتد."
+    }
+  }
+}

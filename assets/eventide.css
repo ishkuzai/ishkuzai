@@ -1,0 +1,241 @@
+/* Eventide / Vespera: a printed leaf.
+   Vellum, iron-gall ink, rubric red and lapis.  A classical meander across the head of the
+   page and a folk lozenge band at its foot are the only ornaments; the rest is text. */
+:root {
+  --vellum: #e9e2ce;
+  --vellum-deep: #ddd3ba;
+  --ink: #2b2118;
+  --ink-soft: #5b4d3e;
+  --rubric: #8a2f2c;
+  --lapis: #2d3f72;
+  --verdigris: #3b6a5c;
+  --gold: #9c7b36;
+  --umber: #5b3b2a;
+  --rule: #c2b289;
+
+  --body: "EB Garamond", Garamond, "Hoefler Text", "Palatino Linotype", Georgia, serif;
+  --display: "IM Fell English", "EB Garamond", Georgia, serif;
+  --sc: "IM Fell English SC", "EB Garamond", Georgia, serif;
+  --caps: all-small-caps;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --gutter: clamp(1.25rem, 5vw, 3.2rem);
+  --measure: 37rem;
+
+  /* ornaments, drawn inline so the site needs no image files */
+  --meander: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='12' viewBox='0 0 16 12'%3E%3Cpath d='M0 11.5H16M2 11.5V2H13V9H5V5H10V7' fill='none' stroke='%238a2f2c' stroke-width='1.1' stroke-linejoin='miter'/%3E%3C/svg%3E");
+  --lozenge: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='14' viewBox='0 0 18 14'%3E%3Cpath d='M9 1.5L15 7L9 12.5L3 7Z' fill='none' stroke='%238a2f2c' stroke-width='1'/%3E%3Cpath d='M9 4.6L11.4 7L9 9.4L6.6 7Z' fill='%232d3f72'/%3E%3Cpath d='M0 7H2M16 7H18' stroke='%239c7b36' stroke-width='1'/%3E%3C/svg%3E");
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .36 0 0 0 0 .27 0 0 0 0 .15 0 0 0 .075 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+html[lang="de"] {
+  --body: "Grenze Gotisch", "UnifrakturMaguntia", "EB Garamond", serif;
+  --display: "UnifrakturMaguntia", "Grenze Gotisch", serif;
+  --sc: "Grenze Gotisch", serif;
+  --caps: normal;
+}
+/* Russian is set in Monomakh, a Slavonic ustav face that carries the old letters (ѣ і ѳ ѵ); Old Standard TT and
+   EB Garamond stand behind it for anything it lacks.  It has one weight, so no bold is asked of it. */
+html[lang="ru"] {
+  --body: "Monomakh", "Old Standard TT", "EB Garamond", Georgia, serif;
+  --display: "Monomakh", "Old Standard TT", "EB Garamond", Georgia, serif;
+  --sc: "Monomakh", "Old Standard TT", "EB Garamond", serif;
+  --caps: normal;
+}
+html[lang="fa"] { --body: "Amiri", "EB Garamond", serif; --display: "Amiri", "EB Garamond", serif; --sc: "Amiri", serif; --caps: normal; }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; color: var(--ink); font-family: var(--body); font-size: 1.2rem; line-height: 1.62;
+  font-kerning: normal; font-variant-ligatures: common-ligatures discretionary-ligatures;
+  text-rendering: optimizeLegibility;
+  background: radial-gradient(ellipse at 50% 30%, transparent 55%, rgba(110, 80, 40, 0.16)) fixed,
+              var(--grain), var(--vellum-deep);
+}
+html[lang="de"] body { font-size: 1.28rem; line-height: 1.6; font-weight: 500; }
+html[lang="fa"] body { font-size: 1.38rem; line-height: 2.05; }
+html[lang="ru"] body { font-size: 1.04rem; line-height: 1.75; font-synthesis: none; }
+a { color: var(--lapis); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+a:hover { color: var(--rubric); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--rubric); outline-offset: 3px; }
+.ant { font-family: "EB Garamond", Georgia, serif; font-weight: 400; font-size: 0.94em; }
+.wrap { width: min(100%, calc(var(--measure) + 2 * var(--gutter))); margin-inline: auto; padding-inline: var(--gutter); }
+
+/* ---- the leaf ---- */
+.band { height: 14px; background-repeat: repeat-x; background-position: center; }
+.band--key { background-image: var(--meander); background-color: var(--vellum); border-block-end: 1px solid var(--gold); }
+.band--stitch { height: 18px; background-image: var(--lozenge); border-block-start: 1px solid var(--gold); }
+.leaf {
+  max-width: 62rem; margin-inline: auto; background: var(--vellum) var(--grain);
+  container-type: inline-size;
+  border-inline: 1px solid var(--gold);
+  box-shadow: inset 0 0 0 5px var(--vellum), inset 0 0 0 6px rgba(156, 123, 54, 0.55),
+              0 0 60px rgba(70, 45, 20, 0.18);
+}
+
+/* ---- running head ---- */
+.running {
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
+  gap: 0.2rem 1.6rem; padding-block: 1.1rem 0.9rem;
+  font-family: var(--sc); font-variant-caps: var(--caps); letter-spacing: 0.04em; font-size: 1.05rem;
+  border-block-end: 1px solid var(--rule);
+}
+html[lang="de"] .running, html[lang="fa"] .running { letter-spacing: 0; font-size: 1.1rem; }
+.running a { color: var(--ink); text-decoration: none; }
+.running a:hover { color: var(--rubric); text-decoration: underline; }
+.wordmark { font-family: var(--display); font-variant-caps: normal; font-size: 1.35rem; letter-spacing: 0; }
+html[lang="de"] .wordmark { font-size: 1.5rem; }
+.sections { display: flex; gap: 1.3rem; margin-inline-end: auto; padding-inline-start: 0.4rem; }
+.sections a[aria-current], .langs a[aria-current] { color: var(--rubric); text-decoration: underline; text-underline-offset: 0.28em; }
+.langs { display: flex; gap: 0.25rem; }
+.langs a { padding: 0.1rem 0.4rem; font-family: "EB Garamond", Georgia, serif; font-variant-caps: all-small-caps; letter-spacing: 0.06em; font-weight: 500; }
+
+/* ---- title ---- */
+.title { padding-block: 3.2rem 1.2rem; text-align: center; }
+h1 {
+  margin: 0; font-family: var(--display); font-weight: 400; font-size: clamp(2.7rem, 8vw, 4.6rem);
+  line-height: 1.08; letter-spacing: 0.005em; color: var(--ink); text-wrap: balance;
+}
+html[lang="de"] h1 { font-size: clamp(2.9rem, 9vw, 5rem); line-height: 1.12; }
+html[lang="ru"] h1 { font-weight: 400; font-size: clamp(1.9rem, 5.6vw, 3.1rem); line-height: 1.2; }
+html[lang="fa"] h1 { line-height: 1.5; font-weight: 700; }
+.ornament { height: 16px; margin: 1.1rem auto 0; width: min(100%, 15rem); background: var(--lozenge) center / contain no-repeat; }
+
+/* ---- text ---- */
+.content { padding-block: 1.4rem 3.6rem; }
+.lead { font-size: 1.22em; line-height: 1.5; margin-block: 0 1.6rem; }
+.lead::first-letter {
+  float: inline-start; font-family: var(--display); font-weight: 400; color: var(--rubric);
+  font-size: 4.3em; line-height: 0.78; padding-block-start: 0.04em; padding-inline-end: 0.09em;
+}
+html[lang="fa"] .lead::first-letter { float: none; font: inherit; color: inherit; padding: 0; }
+.origin { font-family: var(--body); font-size: 0.95rem; font-style: italic; color: var(--ink-soft); margin: 0 0 1.4rem; }
+html[lang="de"] .origin, html[lang="fa"] .origin { font-style: normal; }
+.lead strong { font-weight: inherit; }
+.content p { margin: 0 0 1em; }
+@media (min-width: 700px) {
+  .content > p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; text-wrap: pretty; }
+  html[lang="de"] .content > p { text-align: start; hyphens: manual; }
+}
+h2 {
+  position: relative; margin: 3rem 0 0.9rem; font-family: var(--display); font-weight: 400;
+  font-size: 1.85rem; line-height: 1.2; color: var(--ink);
+}
+html[lang="de"] h2 { font-size: 2.1rem; }
+html[lang="ru"] h2 { font-weight: 400; font-size: 1.4rem; line-height: 1.3; }
+html[lang="fa"] h2 { font-weight: 700; font-size: 1.75rem; }
+h2::before {
+  content: ""; display: block; width: 3.4rem; height: 12px; margin-block-end: 0.6rem;
+  background: var(--lozenge) left center / auto 12px no-repeat;
+}
+html[dir="rtl"] h2::before { background-position: right center; }
+h3 { font-family: var(--display); font-weight: 400; font-size: 1.3rem; margin: 0; }
+cite { font-style: italic; }
+html[lang="de"] em, html[lang="de"] i, html[lang="de"] cite { font-style: normal; letter-spacing: 0.07em; }
+.content ul { margin: 0.4rem 0 0; padding-inline-start: 1.1rem; }
+.content li { margin-block: 0.75rem; padding-inline-start: 0.2rem; }
+.content li::marker { color: var(--rubric); content: "◆  "; font-size: 0.6em; }
+
+blockquote {
+  margin: 2rem auto; max-width: 30rem; padding: 1.1rem 0.4rem 1rem; text-align: center;
+  border-block: 1px solid var(--rule); font-style: italic; font-size: 1.08em;
+}
+html[lang="de"] blockquote, html[lang="fa"] blockquote { font-style: normal; }
+blockquote p { margin: 0; text-align: center; }
+
+/* ---- the chronology, set as a ledger ---- */
+.table-wrap {
+  --w: min(52rem, 100cqw - 2 * var(--gutter));
+  width: var(--w); margin-block: 1.4rem 1.8rem; margin-inline-start: calc(50% - var(--w) / 2);
+}
+table { width: 100%; border-collapse: collapse; font-size: 0.93em; line-height: 1.5; }
+th {
+  text-align: start; font-family: var(--sc); font-variant-caps: var(--caps); font-weight: 400;
+  letter-spacing: 0.05em; font-size: 1.05em; color: var(--ink-soft);
+  padding: 0 0.8rem 0.45rem; border-block-end: 1px solid var(--ink);
+}
+td { padding: 0.8rem 0.8rem; vertical-align: top; border-block-end: 1px solid var(--rule); }
+td:first-child { width: 21%; }
+td:nth-child(2) { width: 17%; color: var(--ink-soft); font-style: italic; }
+html[lang="de"] td:nth-child(2), html[lang="fa"] td:nth-child(2) { font-style: normal; }
+tr:not(.sub) td:first-child { font-family: var(--display); font-size: 1.12em; color: var(--rubric); }
+tr.sub td:first-child { padding-inline-start: 1.7rem; font-style: italic; }
+html[lang="de"] tr.sub td:first-child { font-style: normal; }
+tr.sub td { font-size: 0.97em; }
+@media (max-width: 760px) {
+  .table-wrap { width: 100%; margin-inline-start: 0; }
+  thead { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); }
+  table, tbody, tr, td { display: block; width: 100% !important; }
+  tr { padding-block: 0.8rem; border-block-end: 1px solid var(--rule); }
+  td { padding: 0.1rem 0; border: 0; }
+  td:nth-child(2) { font-size: 0.88em; margin-block-end: 0.3rem; }
+  tr.sub td:first-child { padding-inline-start: 1rem; }
+}
+
+/* ---- the word tracer ---- */
+.tracer { margin-block: 2rem 1.6rem; padding-block-start: 1.1rem; border-block-start: 1px solid var(--ink); }
+.tracer-label, .trace-root, .chain-title, .chain-stage, .step-stage, .step-law {
+  font-family: var(--sc); font-variant-caps: var(--caps); letter-spacing: 0.04em;
+}
+html[lang="de"] .tracer-label, html[lang="de"] .trace-root, html[lang="de"] .chain-title,
+html[lang="de"] .chain-stage, html[lang="de"] .step-stage, html[lang="de"] .step-law { letter-spacing: 0; }
+.tracer-label { font-size: 1.05rem; margin: 0 0 0.6rem; color: var(--ink-soft); }
+.tracer-words { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 1rem; padding: 0; list-style: none; }
+.tracer-words li { margin: 0; padding: 0; }
+.tracer-words li::marker { content: none; }
+.tracer button {
+  font: inherit; font-size: 1.05rem; padding: 0.2rem 0.9rem; border: 1px solid var(--ink);
+  background: transparent; color: var(--ink); cursor: pointer; border-radius: 0;
+}
+.tracer button:hover:not(:disabled) { background: var(--vellum-deep); }
+.tracer button[aria-pressed="true"] { background: var(--ink); color: var(--vellum); }
+.tracer button:disabled { opacity: 0.4; cursor: default; }
+.tracer-controls { display: none; gap: 0.6rem; margin-block: 0 1.4rem; flex-wrap: wrap; }
+.js .tracer-controls { display: flex; }
+.js .tracer-controls button:first-child { background: var(--rubric); border-color: var(--rubric); color: var(--vellum); }
+.js .tracer-controls button:first-child:disabled { background: transparent; color: var(--ink); border-color: var(--ink); }
+.trace { margin-block: 1.6rem; }
+.trace[hidden], .step[hidden], .chain[hidden] { display: none; }
+.trace h3 { font-size: 1.9rem; }
+.trace-root { font-size: 1.02rem; color: var(--ink-soft); margin: 0.1rem 0 1rem; }
+.trace-root span { font-family: "EB Garamond", serif; font-variant-caps: normal; font-size: 1.1rem; color: var(--ink); letter-spacing: 0; }
+.steps { list-style: none; margin: 0; padding: 0; }
+.step { border-inline-start: 6px solid var(--lapis); padding-block: 0.55rem; padding-inline: 1rem 0; margin: 0; }
+.step.stage-p { border-color: var(--lapis); }
+.step.stage-0 { border-color: var(--verdigris); }
+.step.stage-1 { border-color: var(--gold); }
+.step.stage-2 { border-color: var(--rubric); }
+.step.stage-3 { border-color: var(--umber); }
+.step p { margin: 0; text-align: start; }
+.step-stage { font-size: 0.98rem; color: var(--ink-soft); margin-bottom: 0.3rem !important; }
+.step-law { font-size: 1.08rem; }
+.step-form, .chain-form { font-family: "EB Garamond", "Gentium Book Plus", serif; font-variant-caps: normal; text-align: left; unicode-bidi: isolate; }
+.step-form { font-size: 2.1rem; line-height: 1.25; }
+.step-text { font-size: 1.02rem; color: var(--ink-soft); max-width: 34em; line-height: 1.5; }
+.step.fresh .step-form { animation: settle 0.7s ease-out; }
+@keyframes settle { from { opacity: 0; transform: translateY(-0.2em); } to { opacity: 1; transform: none; } }
+.chain { margin-top: 1.4rem; padding-top: 0.8rem; border-block-start: 1px solid var(--rule); }
+.chain-title { font-size: 1rem; color: var(--ink-soft); margin: 0 0 0.5rem; }
+.chain ol { list-style: none; display: flex; flex-wrap: wrap; gap: 0.6rem 1.6rem; margin: 0; padding: 0; }
+.chain li { display: flex; flex-direction: column; margin: 0; padding: 0; }
+.chain li::marker { content: none; }
+.chain-stage { font-size: 0.95rem; color: var(--ink-soft); }
+.chain-form { font-size: 1.45rem; }
+.chain li:last-child .chain-form { font-weight: 700; }
+
+/* ---- colophon ---- */
+.foot {
+  margin-top: 1rem; padding-block: 1.6rem 1.8rem; text-align: center; font-size: 0.98rem;
+  color: var(--ink-soft); display: flex; flex-direction: column; align-items: center; gap: 0.2rem;
+}
+.foot p { margin: 0; }
+.foot a { color: var(--ink-soft); }
+.foot a:hover { color: var(--rubric); }
+
+@media (max-width: 700px) {
+  .leaf { border-inline: 0; box-shadow: none; }
+  .running { padding-block: 0.9rem 0.7rem; }
+  .title { padding-block: 2.2rem 0.6rem; }
+  .step-form { font-size: 1.8rem; }
+  .lead::first-letter { font-size: 3.8em; }
+}
+@media (prefers-reduced-motion: reduce) { .step.fresh .step-form { animation: none; } }
